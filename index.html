@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown — EC Paris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+    #fiche {
+      background: #1B2A4A;
+      border-radius: 16px;
+      padding: 2.5rem 2rem 2rem;
+      width: 100%;
+      max-width: 480px;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    #fiche-accent {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: #E8A921;
+      border-radius: 16px 16px 0 0;
+    }
+    #fiche-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #E8A921;
+      color: #1B2A4A;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+    #fiche-titre {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    #fiche-sous {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2rem;
+    }
+    #fiche-sep {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin-bottom: 2rem;
+    }
+    #fiche-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      margin-bottom: 1.75rem;
+    }
+    #cd-big {
+      font-family: 'DM Serif Display', serif;
+      font-size: 88px;
+      line-height: 1;
+      color: #E8A921;
+      letter-spacing: -2px;
+    }
+    #cd-unit {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    #fiche-date {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+  <div id="fiche">
+    <div id="fiche-accent"></div>
+    <div id="fiche-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+      Journée créativité
+    </div>
+    <div id="fiche-titre">Enseignement Catholique de Paris</div>
+    <div id="fiche-sous">Compte à rebours — Jour J</div>
+    <div id="fiche-sep"></div>
+    <div id="fiche-center">
+      <div id="cd-big">—</div>
+      <div id="cd-unit">jours restants</div>
+    </div>
+    <div id="fiche-date">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:5px; opacity:.5;" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      7 octobre 2026
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const target = new Date('2026-10-07T00:00:00');
+      const now = new Date();
+      const daysLeft = Math.max(0, Math.ceil((target - now) / 86400000));
+      document.getElementById('cd-big').textContent = daysLeft;
+    })();
+  </script>
+</body>
+</html>
